@@ -1,0 +1,27 @@
+.profile-container{
+    background: linear-gradient(
+    to bottom right,
+    #91c6fb 0%,    
+    #ffffff 50%,    
+    #cbe5ff 100%   
+  );
+
+}
+
+ .profile-details form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profile-details input[type="email"] {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.profile-details h3 {
+  margin-bottom: 10px;
+  color: #1e90ff;
+}

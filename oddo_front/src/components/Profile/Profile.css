@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    padding: 0;
+    
+    /* background: linear-gradient(to bottom right, #91c6fb, #ffffff); */
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .profile-container {
+    /* background-color: #fff; */
+     background: linear-gradient(to bottom right, #91c6fb, #ffffff);
+    padding: 32px;
+    max-width: 960px;
+    margin: 40px auto;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-heading {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 24px;
+    color: #333;
+    text-align: center;
+  }
+  
+  .profile-content {
+    display: flex;
+    line-height: 14;
+    gap: 40px;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  
+  .profile-details {
+    flex: 1;
+    color: #444;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .profile-details p {
+    margin: 8px 0;
+  }
+  
+  .skills-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 8px;
+  }
+  
+  .skill-tag {
+    background-color: #e0f0ff;
+    color: #007acc;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+  }
+  
+  .profile-image-section {
+    text-align: center;
+      background-color: #f0f0f0;
+    width: 200px;
+    height: 200px;
+  }
+  
+  .profile-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    background-color: #f0f0f0;
+    border-radius: 12px;
+    border: 2px solid #ddd;
+  }
+  
+  .edit-image-btn {
+    width: 100px;
+    height:50px;
+    margin-top: 12px;
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .edit-image-btn:hover {
+    background-color: #0d6efd;
+  }
