@@ -1,0 +1,207 @@
+/* .invitation-card {
+  display: flex;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0px;
+}
+
+.card-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+  margin-top: 100px;
+}
+
+.profile-photo {
+  width: 60px;
+  height: 60px;
+  background-color: #d9d9d9;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.ratings {
+  font-size: 14px;
+  color: #444;
+}
+
+.highlight {
+  color: #fc6316;
+  font-weight: bold;
+}
+
+.card-middle {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.card-middle h3 {
+  margin: 0 0 8px;
+}
+
+.card-middle p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+.card-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.status-line {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.pending {
+  color: red;
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+.actions button {
+  margin-left: 8px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.accept {
+  background-color: #16b3fc;
+  margin-bottom: 8px;
+}
+
+.reject {
+  background-color: #fc6316;
+} */
+
+
+
+
+.invitation-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff9f9;
+  border-radius: 12px;
+  padding: 1.2rem 1.5rem;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.card-left {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 1rem;
+  width: 500px;
+}
+
+.profile-photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+  margin-bottom: 0.5rem;
+}
+
+.ratings {
+  font-size: 0.85rem;
+  color: #444;
+}
+
+.highlight {
+  color: #fa0c0c;
+  font-weight: 600;
+}
+
+.card-middle {
+  flex-grow: 1;
+  padding: 0 1rem;
+}
+
+.card-middle h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.1rem;
+}
+
+.card-middle p {
+  margin: 3px 0;
+  font-size: 0.95rem;
+}
+
+.card-right {
+  text-align: right;
+  min-width: 150px;
+}
+
+.status-line {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  margin-right: 0px;
+}
+
+.pending {
+  color: red;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.accept {
+  background-color: #16b3fc;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.reject {
+  background-color: #fc6316;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.accept:hover {
+  background-color: #0f8bc9;
+}
+
+.reject:hover {
+  background-color: #d7540e;
+}
+
+@media (max-width: 768px) {
+  .invitation-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .card-right {
+    width: 100%;
+    text-align: left;
+  }
+}
