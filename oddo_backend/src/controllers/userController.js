@@ -83,6 +83,31 @@ const login = async(req,res) => {
     }
 }
 
+const userInfo = async (req, res) => {
+  const { id } = req.params;
+  if (!id) {
+    return res.status(400).json({ message: "User ID is required." });
+  }
+  // Validate ObjectId
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(400).json({ message: "Invalid User ID format." });
+  }
+  try {
+    const user = await User.findById(id);
+    if (!user) {
+      return res.status(404).json({ message: "User not found." });
+    }
+    // Return all user details except password and token
+    const userObj = user.toObject();
+    delete userObj.password;
+    delete userObj.token;
+    return res.status(200).json({ user: userObj });
+  } catch (e) {
+    console.error(e);
+    return res.status(500).json({ message: "Something went wrong." });
+  }
+};
+
 const updateUser = async (req, res) => {
   const { id } = req.params;
   const updates = req.body;
@@ -119,5 +144,5 @@ const updateUser = async (req, res) => {
   }
 };
 
-export {login,signup,updateUser};
+export {login,signup,updateUser,userInfo};
 
