@@ -5,8 +5,12 @@ import { FaGoogle, FaFacebookF, FaPinterestP } from "react-icons/fa";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import "./Login.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom"; 
+
 
 const LoginForm = () => {
+  const navigate = useNavigate(); 
+
   const [showPassword, setShowPassword] = useState(false);
   const {
     register,
@@ -20,10 +24,8 @@ const LoginForm = () => {
 
       if (response.status === 200) {
         const { token } = response.data;
-        alert("Login successful!");
-        localStorage.setItem("token", token); // store for auth
-        reset();
-        // navigate or redirect to dashboard here
+        localStorage.setItem("token", token); 
+        navigate("/");
       }
     } catch (err) {
       if (err.response?.status === 401) {

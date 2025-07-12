@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import "./SignUp.css";
-
+import { useNavigate } from "react-router-dom";
 const SignupForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [message, setMessage] = useState("");
@@ -16,6 +16,8 @@ const SignupForm = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
+    const navigate = useNavigate(); // ⏩ Navigation hook
+
     const payload = {
       ...data,
       isPublic: true,
@@ -33,11 +35,11 @@ const SignupForm = () => {
       );
       console.log(res.message);
       if (res.status === 201) {
-        alert("✅ Account created successfully!");
         reset();
       } else {
         alert(`⚠️ ${res.data.message}`);
       }
+      navigate("/login");
     } catch (err) {
       console.error(err);
       setMessage("Something went wrong.");
