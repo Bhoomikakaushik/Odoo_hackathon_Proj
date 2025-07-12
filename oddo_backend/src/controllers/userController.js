@@ -35,7 +35,7 @@ const signup = async (req, res) => {
     const user = await User.create({
         name,
         email,
-        passsword: hashedPass,
+        password: hashedPass,
         location,
         profilePhoto,
         skillsOffered,
