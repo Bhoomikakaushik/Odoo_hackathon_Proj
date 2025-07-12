@@ -16,6 +16,8 @@ function App() {
             <Route path='/' element={<Homepage />} />
             <Route path='/Login' element={<Login />} />
             <Route path='/Signup' element={<SignupForm/>}></Route>
+            <Route path='/Profile' element={<Profile/>}></Route>
+            <Route path='/Admindashboard' element={<AdminDashboard/>}></Route>
           </Routes>
         </main>
       </div>
