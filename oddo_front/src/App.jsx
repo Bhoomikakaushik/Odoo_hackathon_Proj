@@ -4,7 +4,7 @@ import Homepage from './components/Homepage/Homepage.jsx'
 import Login from './components/Login/Login.jsx'
 import { Routes, Route } from 'react-router-dom'
 import SignupForm from './components/SignUp/Signup.jsx';
-import InvitationCard from './components/InvitationCard.jsx/InvitationCard.jsx'
+import InvitationCard from './components/InvitationCard/InvitationCard.jsx'
 
 function App() {
 
@@ -18,10 +18,7 @@ function App() {
             <Route path='/Login' element={<Login />} />
             <Route path='/Signup' element={<SignupForm/>}></Route>
             <Route path='/Invitations' element={<InvitationCard/>}></Route>
-
-
-            
-            
+ 
           </Routes>
         </main>
       </div>
