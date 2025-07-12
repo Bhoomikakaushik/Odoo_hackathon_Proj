@@ -1,7 +1,7 @@
 # 🚀 SkillBridge: Odoo Hackathon Project
 
 ## 📝 Overview
-SkillBridge is a full-stack web application designed to connect users based on skills they offer and seek, with robust admin management and authentication. Built for a hackathon, this project demonstrates modern web development practices using Node.js, Express, MongoDB, React, and Vite. The platform is ideal for showcasing collaborative skills, backend/frontend architecture, and RESTful API design in your resume.
+SkillBridge is a full-stack web application designed to connect users based on skills they offer and seek, with robust admin management and authentication. Built for a hackathon, this project demonstrates modern web development practices using Node.js, Express, MongoDB, React, and Vite. The platform is ideal for showcasing collaborative skills, backend/frontend architecture, and RESTful API design
 
 ---
 
