@@ -5,7 +5,7 @@ import { FaGoogle, FaFacebookF, FaPinterestP } from "react-icons/fa";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import "./Login.css";
 import axios from "axios";
-import { useNavigate } from "react-router-dom"; 
+import { Link, useNavigate } from "react-router-dom"; 
 
 
 const LoginForm = () => {
@@ -96,7 +96,7 @@ const LoginForm = () => {
 
           {/* Sign Up */}
           <p className="signup">
-            Don't have an account? <a href="#">Create new account now</a>
+            Don't have an account? <Link to={'/signup'}>Create new account now</Link>
           </p>
         </form>
       </div>

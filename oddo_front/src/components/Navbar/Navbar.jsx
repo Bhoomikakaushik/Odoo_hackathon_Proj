@@ -12,8 +12,7 @@ function Navbar(){
             <Link to='/' className="navlinks">Home</Link>
             <Link to='/Invitations' className="navlinks">Invitations</Link>
             <Link to='/Profile' className="navlinks">Profile</Link>
-            <Link to='/Account' className="navlinks">Login</Link>
-
+            <Link to='/Login' className="navlinks">Login</Link>
         </div>
     </nav>
     )

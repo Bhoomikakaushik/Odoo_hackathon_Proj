@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import SearchBar from './Search';
-// import ProfileCard from '../Profile/Profile';
+import ProfileCard from './Profile';
 import Pagination from './Pagination';
 import './Homepage.css'
 // import { useNavigate } from 'react-router-dom';
@@ -25,6 +25,30 @@ const profiles = [
   },
   {
     id: 3,
+    name: 'Joe Wills',
+    profilePhoto: 'https://via.placeholder.com/150 ',
+    skillsOffered: ['JavaScript', 'Python'],
+    skillsWanted: ['Photoshop', 'Graphic Designer'],
+    rating: 4.0,
+  },
+  {
+    id: 4,
+    name: 'Marc Demo',
+    profilePhoto: 'https://via.placeholder.com/150 ',
+    skillsOffered: ['JavaScript', 'Python'],
+    skillsWanted: ['Photoshop', 'Graphic Designer'],
+    rating: 3.9,
+  },
+  {
+    id: 5,
+    name: 'Michell',
+    profilePhoto: 'https://via.placeholder.com/150 ',
+    skillsOffered: ['JavaScript', 'Python'],
+    skillsWanted: ['Photoshop', 'Graphic Designer'],
+    rating: 2.5,
+  },
+  {
+    id: 6,
     name: 'Joe Wills',
     profilePhoto: 'https://via.placeholder.com/150 ',
     skillsOffered: ['JavaScript', 'Python'],

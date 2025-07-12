@@ -15,8 +15,8 @@ const SignupForm = () => {
     formState: { errors },
   } = useForm();
 
+  const navigate = useNavigate(); // ⏩ Navigation hook
   const onSubmit = async (data) => {
-    const navigate = useNavigate(); // ⏩ Navigation hook
 
     const payload = {
       ...data,
