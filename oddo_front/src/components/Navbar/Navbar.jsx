@@ -4,7 +4,9 @@ function Navbar(){
     return(
     <nav className="navbar">
         <div className="navbarbrand">
-            <Link to ='/'>Odoo</Link>
+            <Link to ='/'>
+                <img src="/SkillBridge.jpg" alt="" className="" />
+            </Link>
         </div>
         <div className="navbarlinks">
             <Link to='/' className="navlinks">Home</Link>
