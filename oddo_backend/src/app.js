@@ -1,7 +1,9 @@
 import express from "express";
 import mongoose from "mongoose";
 import userRoutes from "./routes/userRoutes.js";
+import adminRoutes from "./routes/adminRoutes.js";
 import cors from "cors";
+
 
 const app = express();
 
@@ -12,6 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 const port = process.env.PORT || 8000;
 
 app.use("/api/v1/user", userRoutes);
+app.use('/api/v1/admin', adminRoutes);
 
 app.get("/", (req, res) => {
     res.send("hellloooo!");
