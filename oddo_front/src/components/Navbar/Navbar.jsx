@@ -13,12 +13,6 @@ function Navbar(){
             <Link to='/Account' className="navlinks">Invitations</Link>
             <Link to='/Account' className="navlinks">Profile</Link>
             <Link to='/Account' className="navlinks">Login</Link>
-
-
-            
-
-
-
         </div>
     </nav>
     )
