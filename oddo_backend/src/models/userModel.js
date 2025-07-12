@@ -17,7 +17,7 @@ const userSchema = new mongoose.Schema({
   isPublic: { type: Boolean, default: true },
   rating: { type: Number, default: 0 },
   completedSwaps: { type: Number, default: 0 },
-  isBanned: { type: Boolean, default: false },
+  isBanned: { type: Boolean, default: false },  
   createdAt: { type: Date, default: Date.now },
 });
 const User = mongoose.model("User", userSchema);

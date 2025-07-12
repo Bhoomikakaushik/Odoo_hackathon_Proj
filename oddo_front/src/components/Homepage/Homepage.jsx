@@ -5,7 +5,7 @@ import Pagination from './Pagination';
 import './Homepage.css'
 // import { useNavigate } from 'react-router-dom';
 
-// const navigate = useNavigate()
+const navigate = useNavigate()
 const profiles = [
   {
     id: 1,
@@ -34,6 +34,7 @@ const profiles = [
 ];
 
 const Homepage = () => {
+  const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 3;
 

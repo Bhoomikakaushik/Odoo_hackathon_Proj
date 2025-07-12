@@ -1,30 +1,58 @@
-// SignupForm.jsx
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import "./SignUp.css";
-
+import { useNavigate } from "react-router-dom";
 const SignupForm = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [message, setMessage] = useState("");
 
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log("Signup Data:", data);
+  const onSubmit = async (data) => {
+    const navigate = useNavigate(); // ⏩ Navigation hook
+
+    const payload = {
+      ...data,
+      isPublic: true,
+      rating: 0,
+      completedSwaps: 0,
+      isBanned: false,
+      createdAt: new Date().toISOString(),
+      profilePhoto: "",
+    };
+
+    try {
+      const res = await axios.post(
+        "http://localhost:8000/api/v1/user/signup",
+        payload
+      );
+      console.log(res.message);
+      if (res.status === 201) {
+        reset();
+      } else {
+        alert(`⚠️ ${res.data.message}`);
+      }
+      navigate("/login");
+    } catch (err) {
+      console.error(err);
+      setMessage("Something went wrong.");
+    }
   };
 
   return (
     <div className="login-container">
       <div className="login-box">
-        <h2>Create Your Profile</h2>
-        <p className="subtitle">Join us by filling the details below</p>
+        <h2>Create Your Account</h2>
+        <p className="subtitle">Fill out the details below</p>
 
         <form onSubmit={handleSubmit(onSubmit)} className="login-form">
-          {/* Name */}
           <div className="input-group">
             <input
               type="text"
@@ -34,7 +62,6 @@ const SignupForm = () => {
           </div>
           {errors.name && <p className="error">{errors.name.message}</p>}
 
-          {/* Email */}
           <div className="input-group">
             <input
               type="email"
@@ -50,7 +77,6 @@ const SignupForm = () => {
           </div>
           {errors.email && <p className="error">{errors.email.message}</p>}
 
-          {/* Password */}
           <div className="input-group password-group">
             <input
               type={showPassword ? "text" : "password"}
@@ -71,82 +97,57 @@ const SignupForm = () => {
               )}
             </span>
           </div>
-          {errors.password && <p className="error">{errors.password.message}</p>}
+          {errors.password && (
+            <p className="error">{errors.password.message}</p>
+          )}
 
-          {/* Location */}
           <div className="input-group">
             <input
               type="text"
               placeholder="Location"
-              {...register("location", { required: "Location is required" })}
+              {...register("location")}
             />
           </div>
-          {errors.location && <p className="error">{errors.location.message}</p>}
 
-          {/* Skills Offered */}
           <div className="input-group">
             <input
               type="text"
               placeholder="Skills you can offer"
-              {...register("skillsOffered", {
-                required: "Please list offered skills",
-              })}
+              {...register("skillsOffered")}
             />
           </div>
-          {errors.skillsOffered && <p className="error">{errors.skillsOffered.message}</p>}
 
-          {/* Skills Wanted */}
           <div className="input-group">
             <input
               type="text"
               placeholder="Skills you want to learn"
-              {...register("skillsWanted", {
-                required: "Please list wanted skills",
-              })}
+              {...register("skillsWanted")}
             />
           </div>
-          {errors.skillsWanted && <p className="error">{errors.skillsWanted.message}</p>}
 
-          {/* Availability - Radio Buttons */}
           <label className="radio-label">Availability</label>
           <div className="radio-group">
-            <label>
-              <input
-                type="radio"
-                value="Available"
-                {...register("availability", { required: "Select availability" })}
-              />
-              Available
-            </label>
-            <label>
-              <input
-                type="radio"
-                value="Not Available"
-                {...register("availability")}
-              />
-              Not Available
-            </label>
-            <label>
-              <input
-                type="radio"
-                value="Occasionally"
-                {...register("availability")}
-              />
-              Occasionally
-            </label>
+            <select
+              {...register("availability", {
+                required: "Please select availability",
+              })}
+            >
+              <option value="">Select Availability</option>
+              <option value="Weekends">Weekends</option>
+              <option value="Evenings">Evenings</option>
+              <option value="Weekdays">Weekdays</option>
+              <option value="Flexible">Flexible</option>
+            </select>
           </div>
-          {errors.availability && (
-            <p className="error">{errors.availability.message}</p>
-          )}
 
-          {/* Submit */}
           <button type="submit" className="submit-btn">
             Create Account
           </button>
 
+          {message && <p className="error">{message}</p>}
+
           <p className="signup">
-            Already have an account?{" "}
-            <a href="#">Log in now</a>
+            Already have an account? <a href="#">Log in</a>
           </p>
         </form>
       </div>

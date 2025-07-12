@@ -4,8 +4,13 @@ import { useForm } from "react-hook-form";
 import { FaGoogle, FaFacebookF, FaPinterestP } from "react-icons/fa";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import "./Login.css";
+import axios from "axios";
+import { useNavigate } from "react-router-dom"; 
+
 
 const LoginForm = () => {
+  const navigate = useNavigate(); 
+
   const [showPassword, setShowPassword] = useState(false);
   const {
     register,
@@ -13,8 +18,24 @@ const LoginForm = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+    try {
+      const response = await axios.post("http://localhost:8000/api/v1/user/login", data);
+
+      if (response.status === 200) {
+        const { token } = response.data;
+        localStorage.setItem("token", token); 
+        navigate("/");
+      }
+    } catch (err) {
+      if (err.response?.status === 401) {
+        setLoginError("Invalid email or password.");
+      } else if (err.response?.status === 404) {
+        setLoginError("User not found.");
+      } else {
+        setLoginError("Something went wrong.");
+      }
+    }
   };
 
   return (
