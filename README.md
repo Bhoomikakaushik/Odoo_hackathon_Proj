@@ -195,8 +195,6 @@ Add screenshots of the UI, API responses, and architecture diagrams here for ext
 ---
 
 ## ❓ FAQ
-**Q: Can I use this project in my resume?**
-A: ✅ Yes! This project demonstrates full-stack skills, API design, authentication, and modern UI development.
 
 **Q: How do I deploy this project?**
 A: 🚀 Use services like Heroku, Vercel, or Netlify for deployment. Update environment variables for production.
