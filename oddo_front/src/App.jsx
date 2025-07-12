@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import Navbar from './components/Navbar/Navbar.jsx'
-import Home from './components/Home/Home.jsx';
+import Homepage from './components/Homepage/Homepage.jsx'
 import Login from './components/Login/Login.jsx'
 import { Routes, Route } from 'react-router-dom'
 import SignupForm from './components/SignUp/Signup.jsx';
+import InvitationCard from './components/InvitationCard/InvitationCard.jsx'
 
 function App() {
 
@@ -13,9 +14,10 @@ function App() {
         <Navbar />
         <main>
           <Routes>
-            <Route path='/' element={<Home />} />
+            <Route path='/' element={<Homepage />} />
             <Route path='/Login' element={<Login />} />
             <Route path='/Signup' element={<SignupForm/>}></Route>
+           <Route path='/InvitationCard' element={<InvitationCard/>}></Route>
           </Routes>
         </main>
       </div>

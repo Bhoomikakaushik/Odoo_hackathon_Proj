@@ -1,0 +1,169 @@
+
+.homepage {
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  padding: 20px;
+  background-image: url('/bgimg.png');
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.search-bar {
+    margin-top: 50px;
+   width: 500px;
+   height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  border: 1px solid rgb(79, 77, 77);
+
+}
+
+.search-bar .search-input {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.search-bar .search-input input {
+  flex-grow: 1;
+  padding: 10px 15px;
+  background: none;
+  color: white;
+  font-size: 16px;
+}
+
+.search-bar .search-input button {
+  background-color: #C058FF;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 0 20px 20px 0;
+}
+
+.search-bar .availability {
+  background-color: #C058FF; 
+  color: rgb(63, 62, 62);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 0;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.search-bar .availability::after {
+  content: '\25BE'; 
+  margin-left: 10px;
+}
+
+
+.profiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.profile-card {
+  background-color: #f2f2f8d0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+}
+
+.profile-card .profile-photo {
+  width: 100px;
+  height: 100px;
+  background-color: #feffff; 
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: rgb(15, 15, 15);
+  margin-bottom: 10px;
+}
+
+.profile-card .profile-details {
+  text-align: center;
+}
+
+.profile-card .profile-details h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.profile-card .profile-details p {
+  font-size: 14px;
+  color: #A8AAB3; 
+}
+
+.profile-card .skills-offered,
+.profile-card .skills-wanted {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.profile-card .skill-tag {
+  background-color: #328eea; 
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.profile-card .rating {
+  font-size: 14px;
+  color: #A8AAB3;
+  margin-bottom: 10px;
+}
+
+.profile-card .request-button {
+  background-color: #1e1e1f; 
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #373B44;
+  color: white;
+  margin: 0 5px;
+}
+
+.pagination button.active {
+  background-color: #448ef6; 
+  color: white;
+}
+
+
+
+@media (max-width: 768px) {
+  .profiles {
+    grid-template-columns: 1fr;
+  }
+}

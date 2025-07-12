@@ -5,12 +5,20 @@ function Navbar(){
     <nav className="navbar">
         <div className="navbarbrand">
             <Link to ='/'>
-                <img src="/SkillBridge.jpg" alt="" className="" />
+                <img src="/SkillBridge.png" alt="" className="logo" />
             </Link>
         </div>
         <div className="navbarlinks">
             <Link to='/' className="navlinks">Home</Link>
-            <Link to='/Account' className="navlinks">Account</Link>
+            <Link to='/Account' className="navlinks">Invitations</Link>
+            <Link to='/Account' className="navlinks">Profile</Link>
+            <Link to='/Account' className="navlinks">Login</Link>
+
+
+            
+
+
+
         </div>
     </nav>
     )
