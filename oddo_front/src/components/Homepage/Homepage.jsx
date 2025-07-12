@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import SearchBar from './Search';
-import ProfileCard from './Profile';
+// import ProfileCard from '../Profile/Profile';
 import Pagination from './Pagination';
 import './Homepage.css'
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
-
+// const navigate = useNavigate()
 const profiles = [
   {
     id: 1,

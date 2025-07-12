@@ -4,8 +4,6 @@ import Homepage from './components/Homepage/Homepage.jsx'
 import Login from './components/Login/Login.jsx'
 import { Routes, Route } from 'react-router-dom'
 import SignupForm from './components/SignUp/Signup.jsx';
-import Profile from './components/Profile/Profile.jsx'
-import AdminDashboard from './components/Admin/Admin.jsx'
 
 function App() {
 
@@ -18,8 +16,6 @@ function App() {
             <Route path='/' element={<Homepage />} />
             <Route path='/Login' element={<Login />} />
             <Route path='/Signup' element={<SignupForm/>}></Route>
-            <Route path='/Profile' element={<Profile/>}></Route>
-            <Route path='/Admindashboard' element={<AdminDashboard/>}></Route>
           </Routes>
         </main>
       </div>
