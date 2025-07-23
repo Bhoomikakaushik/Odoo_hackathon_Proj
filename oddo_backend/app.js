@@ -1,7 +1,9 @@
+import dotenv from "dotenv";
+dotenv.config();
 import express from "express";
 import mongoose from "mongoose";
-import userRoutes from "./routes/userRoutes.js";
-import adminRoutes from "./routes/adminRoutes.js";
+import userRoutes from "./src/routes/userRoutes.js";
+import adminRoutes from "./src/routes/adminRoutes.js";
 import cors from "cors";
 
 
@@ -21,7 +23,7 @@ app.get("/", (req, res) => {
 });
 
 const start = async () => {
-    const connectionDb = await mongoose.connect("mongodb+srv://bhoomikakaushik11:60Aay7lHZLnepNkT@cluster0.ses3elx.mongodb.net/");
+    const connectionDb = await mongoose.connect(process.env.MONGO_URI);
     console.log(`MONGO connected DB host : ${connectionDb.connection.host}`);
     app.listen(port, () => {
         console.log("app is listening on port 8000");
